@@ -1,0 +1,77 @@
+.Article {
+    margin: 10px;
+}
+
+.blog_post {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 60px 0;
+}
+.full_blog_post {
+    margin: 0;
+}
+.blog_post h3 {
+    margin: 0 0 15px 0;
+}
+.blog_post h5 {
+    margin: 0 0 15px 0;
+    font-size:15px;
+}
+a {
+    color: #5d7bf7;
+}
+.blog_info {
+    margin: 0 0 15px 0;
+}
+.blog_info a, .blog_info i {
+    margin-right: 5px;
+}
+.blog-content {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+.media-object {
+    width: 100%;
+    max-height: 600px;
+    max-width: 800px;
+    margin: 15px 0 30px 0;
+}
+/* comment */
+.heading {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.comment_blog_line {
+    margin-top: 25px;
+    padding: 0 15px;
+}
+.heading h4 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 0;
+    padding: 0;
+  
+}
+.contact_text h3 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+.contact_text h4 {
+    color: #db2828;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.contact_text p {
+    color: #827f7f;
+    font-size: 16px;
+    line-height: 21px;
+}
+#comment{
+    height:155px!important
+}

@@ -1,0 +1,109 @@
+.banner_bg {
+  width: 100%;
+  background: url(../../../images/banner_bg.png);
+  min-height: auto;
+  height: 500px;
+  background-size: 100% 100%;
+}
+.carousel {
+  margin-top: 40px;
+}
+.slider_cont_section {
+  padding: 30px 0 30px;
+  margin-top: 20px;
+}
+.slider_cont_section h4 {
+  color: #006;
+  font-size: 35px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+.slider_cont_section h3 {
+  font-size: 55px;
+  color: #000;
+  font-weight: 700;
+  padding: 0;
+  line-height: normal;
+}
+.slider_cont_section p {
+  margin-bottom: 60px;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 32px;
+  padding-right: 15px;
+  color: #19449b;
+}
+.button-section a {
+  width: 180px;
+  height: 55px;
+  float: left;
+  background: #000;
+  text-align: center;
+  line-height: 55px;
+  color: #fff;
+  margin-right: 30px;
+  font-weight: 300;
+  font-size: 16px;
+}
+.button-section a:hover {
+  color: #fff;
+  text-decoration: none;
+  background: red;
+}
+.aboutUs {
+  margin-top: 70px;
+  font-size: 50px;
+  font-weight: 700;
+}
+.aboutUs span {
+  color: red;
+  font-size: 50px;
+  font-weight: 700;
+}
+.send-home{
+  background-color: red!important;
+  width: 180px;
+  height: 55px;
+  border-radius: 40px!important;
+  margin-top: 30px!important;
+  margin-bottom: 40px!important;
+}
+.send-home:hover{
+  background-color: black!important;
+}
+
+@media (max-width: 500px) {
+  .banner_bg {
+    margin-top: 30px;
+    background: url(../../../images/banner_bg.png);
+    width: 100%;
+    min-height: 815px;
+    background-size: cover;
+  }
+  .slider_cont_section {
+    padding: 15px 0;
+  }
+  .slider_cont_section h4 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+  .slider_cont_section h3 {
+    font-size: 42px;
+    color: #fff;
+    font-weight: 600;
+    margin: -10px 0 25px 0;
+    padding: 0;
+    line-height: normal;
+  }
+  .slider_cont_section p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 28px;
+    padding-right: 15px;
+    color: #fff;
+  }
+}

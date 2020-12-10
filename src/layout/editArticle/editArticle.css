@@ -1,0 +1,9 @@
+.divImg {
+    height:200px;
+    width: 200px;
+    margin-top: 20px;
+}
+.FeatureImage {
+    max-width: auto;
+    max-height: 200px;
+}
