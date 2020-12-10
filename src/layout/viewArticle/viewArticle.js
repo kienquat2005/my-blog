@@ -69,6 +69,7 @@ class ViewArticle extends Component {
       });
   };
   getMyCommentsByIDArticle = () => {
+    console.log(this.props.auth);
     db.collection("Comments")
       .get()
       .then((docs) => {
@@ -136,9 +137,9 @@ class ViewArticle extends Component {
       this.props.history.push({ pathname: "/login" });
     } else {
       const comment = this.state.comment;
-      comment.username = firebase.auth().currentUser.displayName;
-      comment.userID = firebase.auth().currentUser.uid;
-      comment.email = firebase.auth().currentUser.email;
+      comment.username = this.props.auth.displayName;
+      comment.userID = this.props.auth.uid;
+      comment.email = this.props.auth.email;
       comment.articleID = this.props.location.pathname.slice(9);
       db.collection("Comments")
         .add(comment)
@@ -166,8 +167,8 @@ class ViewArticle extends Component {
                     {this.timeStampToString(
                       this.state.article.lastModified.seconds
                     )}
-                    {firebase.auth().currentUser.uid ===
-                    "1osNDqHyjsTecTHnsXiBsLmsPHp2" || firebase.auth().currentUser.uid === 'T9Mbzum7Y6a9AdL4Wo32tIFIOF92'? (
+                    {this.props.auth.uid === "1osNDqHyjsTecTHnsXiBsLmsPHp2" ||
+                    this.props.auth.uid === "T9Mbzum7Y6a9AdL4Wo32tIFIOF92" ? (
                       <Link
                         to={{
                           pathname: "/editArticle/" + this.state.article.id,
