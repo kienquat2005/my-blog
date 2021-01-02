@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <Provider store={getReduxStore()}>
         <ReactReduxFirebaseProvider {...getRrfProp()}>
-          <BrowserRouter> 
-          <Header />
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Header />
             <RouterManager />
             <Footer />
           </BrowserRouter>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter,  BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom";
+import {  BrowserRouter as  Switch, Route, withRouter } from "react-router-dom";
 import ViewArticle from "../viewArticle/viewArticle";
 import EditArticle from "../editArticle/editArticle";
 import NewArticle from "../newArticle/newArticle";
@@ -61,27 +61,25 @@ class RouterManager extends Component {
     }
     render() {
         return (
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route path="/my-blog" exact component={Main} />
-                <Route path="/my-blog/contact" >
+                <Route path="/contact" >
                     <Contact />
                 </Route>
-                <Route path="/my-blog/about" >
+                <Route path="/about" >
                     <About />
                 </Route>
-                <Route path="/my-blog/login">
+                <Route path="/login">
                     <LoginPage />
                 </Route>
-                <Route path="/my-blog/article/:id">
+                <Route path="/article/:id">
                     <ViewArticle />
                 </Route>
-                <Route path="/my-blog/new-article" component={AdminOnly(NewArticle, this.props.auth)}>
+                <Route path="/new-article" component={AdminOnly(NewArticle, this.props.auth)}>
                 </Route>
-                <Route path="/my-blog/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)}>
+                <Route path="/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)}>
                 </Route>
             </Switch>
-            </BrowserRouter>
         );
     }
 }
