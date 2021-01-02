@@ -63,12 +63,12 @@ class RouterManager extends Component {
         return (
             <Switch>
                 <Route path="/my-blog" exact component={Main} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/about" component={About} />
-                <Route path="/login" component={LoginPage} />
-                <Route path="/article/:id" component={ViewArticle} />
-                <Route path="/new-article" component={AdminOnly(NewArticle, this.props.auth)} />
-                <Route path="/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)} />
+                <Route path="/contact" exact component={Contact} />
+                <Route path="/about" exact component={About} />
+                <Route path="/login" exact component={LoginPage} />
+                <Route path="/article/:id" exact component={ViewArticle} />
+                <Route path="/new-article" exact component={AdminOnly(NewArticle, this.props.auth)} />
+                <Route path="/editArticle/:id" exact component={AdminOnly(EditArticle, this.props.auth)} />
             </Switch>
         );
     }

@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Provider store={getReduxStore()}>
         <ReactReduxFirebaseProvider {...getRrfProp()}>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <BrowserRouter basename={process.env.PUBLIC_URL + '/'}>
             <Header />
             <RouterManager />
             <Footer />
