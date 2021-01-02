@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as  Switch, Route, withRouter } from "react-router-dom";
+import { BrowserRouter as Switch, Route, withRouter } from "react-router-dom";
 import ViewArticle from "../viewArticle/viewArticle";
 import EditArticle from "../editArticle/editArticle";
 import NewArticle from "../newArticle/newArticle";
@@ -24,10 +24,10 @@ const AdminOnly = (ComponsedComponent, auth) => {
             }
         }
         componentWillMount() {
-            if(!auth.isEmpty) {
+            if (!auth.isEmpty) {
                 firebase.auth().currentUser.getIdTokenResult()
                     .then((idTokenResult) => {
-                        if(idTokenResult.claims.type ==='administrator') {
+                        if (idTokenResult.claims.type === 'administrator') {
                             this.setState({
                                 isPass: true
                             })
@@ -36,37 +36,35 @@ const AdminOnly = (ComponsedComponent, auth) => {
                             this.props.history.push('/login');
                         }
                     })
-            }else {
+            } else {
                 this.props.history.push('/login')
             }
         }
         render() {
-           if(this.state.isPass){
-               return <ComponsedComponent location={this.props.location} history={this.props.history}
-                auth={auth} />
-           }
-           else {
-               return (
-                   <div>
-                       Checking...
-                   </div>
-               )
-           }
+            if (this.state.isPass) {
+                return <ComponsedComponent location={this.props.location} history={this.props.history}
+                    auth={auth} />
+            }
+            else {
+                return (
+                    <div>
+                        Checking...
+                    </div>
+                )
+            }
         }
     }
     return AdminOnly;
 }
- class RouterManager extends Component {
+class RouterManager extends Component {
     constructor(props) {
         super(props);
         this.setState = {}
     }
-  render() {
-    return (
-      <div> 
-        <Header/>
-             <Switch>
-             <Route exact path="/" component={Main} />
+    render() {
+        return (
+            <Switch>
+                <Route path="/my-blog" exact component={Main} />
                 <Route path="/contact" >
                     <Contact />
                 </Route>
@@ -83,17 +81,13 @@ const AdminOnly = (ComponsedComponent, auth) => {
                 </Route>
                 <Route path="/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)}>
                 </Route>
-             </Switch>  
-           
-            <Footer /> 
-     </div>
-    );
-  }
+            </Switch>
+        );
+    }
 }
 
 const enhance = connect(({ firebase: { auth, profile } }) => ({
     auth,
     profile,
-  }));
+}));
 export default enhance(withRouter(RouterManager));
-  

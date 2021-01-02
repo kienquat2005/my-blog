@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "reactstrap";
 import ArticleCard from "../../../components/articleCard/articleCard";
 import firebase from "../../../Config/firebase";
+import Header from '../header/header';
+import Footer from '../footer/footer';
 import "./main.css";
 import { Link } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
@@ -49,6 +51,7 @@ export default class Main extends Component {
   render() {
     return (
       <div>
+        <Header />
         <div className="banner_bg">
           <Container>
             <Row>
@@ -106,6 +109,7 @@ export default class Main extends Component {
               })
             : ""}
         </Container>
+        <Footer />
       </div>
     );
   }

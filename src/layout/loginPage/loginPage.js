@@ -6,7 +6,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "../../Config/firebase";
 const uiConfig = {
   signInFlow: "popup",
-  signInSuccessUrl: "/",
+  signInSuccessUrl: "/my-blog",
   signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
 };
 class LoginPage extends Component {
