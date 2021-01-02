@@ -51,7 +51,6 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-        <Header />
         <div className="banner_bg">
           <Container>
             <Row>
@@ -109,7 +108,7 @@ export default class Main extends Component {
               })
             : ""}
         </Container>
-        <Footer />
+       
       </div>
     );
   }

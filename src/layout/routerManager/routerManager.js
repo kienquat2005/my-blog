@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Switch, Route, withRouter } from "react-router-dom";
+import {BrowserRouter,  BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom";
 import ViewArticle from "../viewArticle/viewArticle";
 import EditArticle from "../editArticle/editArticle";
 import NewArticle from "../newArticle/newArticle";
@@ -7,8 +7,6 @@ import LoginPage from "../loginPage/loginPage";
 import Contact from "../contact/contact";
 import About from "../about/about";
 import Main from "../homePage/main/main";
-import Header from "../homePage/header/header";
-import Footer from "../homePage/footer/footer";
 import { connect } from "react-redux";
 import firebase from 'firebase/app';
 import 'firebase/auth';        // for authentication
@@ -63,25 +61,27 @@ class RouterManager extends Component {
     }
     render() {
         return (
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
                 <Route path="/my-blog" exact component={Main} />
-                <Route path="/contact" >
+                <Route path="/my-blog/contact" >
                     <Contact />
                 </Route>
-                <Route path="/about" >
+                <Route path="/my-blog/about" >
                     <About />
                 </Route>
-                <Route path="/login">
+                <Route path="/my-blog/login">
                     <LoginPage />
                 </Route>
-                <Route path="/article/:id">
+                <Route path="/my-blog/article/:id">
                     <ViewArticle />
                 </Route>
-                <Route path="/new-article" component={AdminOnly(NewArticle, this.props.auth)}>
+                <Route path="/my-blog/new-article" component={AdminOnly(NewArticle, this.props.auth)}>
                 </Route>
-                <Route path="/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)}>
+                <Route path="/my-blog/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)}>
                 </Route>
             </Switch>
+            </BrowserRouter>
         );
     }
 }

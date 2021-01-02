@@ -64,12 +64,12 @@ class Header extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem className="navItem">
-                  <NavLink className="navLink" href="/about">
+                  <NavLink className="navLink" href="/my-blog/about">
                     Blog
                   </NavLink>
                 </NavItem>
                 <NavItem className="navItem">
-                  <NavLink className="navLink" href="/contact">
+                  <NavLink className="navLink" href="/my-blog/contact">
                     Liên hệ 
                   </NavLink>
                 </NavItem>
@@ -93,7 +93,7 @@ class Header extends Component {
                 <DropdownMenu right>
                   {this.props.auth.isEmpty ? (
                     <DropdownItem>
-                      <NavLink className="new_post" href="/login">
+                      <NavLink className="new_post" href="/my-blog/login">
                         Đăng nhập
                       </NavLink>
                     </DropdownItem>
@@ -109,7 +109,7 @@ class Header extends Component {
                   )}
                   {this.props.auth.uid === "1osNDqHyjsTecTHnsXiBsLmsPHp2" || this.props.auth.uid === "T9Mbzum7Y6a9AdL4Wo32tIFIOF92" ? (
                     <DropdownItem>
-                      <NavLink className="new_post" href="/new-article">
+                      <NavLink className="new_post" href="/my-blog/new-article">
                         Thêm bài viết
                       </NavLink>
                     </DropdownItem>
