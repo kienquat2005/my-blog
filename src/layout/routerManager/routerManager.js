@@ -65,9 +65,8 @@ const AdminOnly = (ComponsedComponent, auth) => {
     return (
       <div> 
         <Header/>
-       
              <Switch>
-             <Route exact path="/my-blog" component={Main} />
+             <Route exact path="/" component={Main} />
                 <Route path="/contact" >
                     <Contact />
                 </Route>

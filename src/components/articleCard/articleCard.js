@@ -67,9 +67,9 @@ const ArticleCard = (props) => {
                   </Link>
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <i className="fa fa-tags"></i>
-                  <Link to={{ pathname: "/my-blog" }}>Photo </Link>
-                  <Link to={{ pathname: "/my-blog" }}>Girl </Link>
-                  <Link to={{ pathname: "/my-blog" }}>Graphics </Link>
+                  <Link to={{ pathname: "/" }}>Photo </Link>
+                  <Link to={{ pathname: "/" }}>Girl </Link>
+                  <Link to={{ pathname: "/" }}>Graphics </Link>
                 </p>
                 <div className="blog-content">
                   <div className="content-img">

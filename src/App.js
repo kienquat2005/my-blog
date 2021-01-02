@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { getReduxStore, getRrfProp } from "./Config/firebase-redux";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <Provider store={getReduxStore()}>
         <ReactReduxFirebaseProvider {...getRrfProp()}>
-          <HashRouter>
+          <BrowserRouter>
             <RouterManager />
-          </HashRouter>
+          </BrowserRouter>
         </ReactReduxFirebaseProvider>
       </Provider>
     </div>
