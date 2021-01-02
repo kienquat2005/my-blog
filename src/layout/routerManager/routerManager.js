@@ -64,17 +64,14 @@ const AdminOnly = (ComponsedComponent, auth) => {
   render() {
     return (
       <div> 
-        <Header />
-            {
-             this.props.auth.isLoaded ?
+        <Header/>
+       
              <Switch>
-                <Route path="/" exact>
-                    <Main />
-                </Route>
-                <Route path="/contact" exact>
+             <Route exact path="/my-blog" component={Main} />
+                <Route path="/contact" >
                     <Contact />
                 </Route>
-                <Route path="/about" exact>
+                <Route path="/about" >
                     <About />
                 </Route>
                 <Route path="/login">
@@ -87,12 +84,9 @@ const AdminOnly = (ComponsedComponent, auth) => {
                 </Route>
                 <Route path="/editArticle/:id" component={AdminOnly(EditArticle, this.props.auth)}>
                 </Route>
-               
              </Switch>  
-             : ''    
-            }
-            <Footer />
-            
+           
+            <Footer /> 
      </div>
     );
   }

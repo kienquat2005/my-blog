@@ -49,7 +49,7 @@ class Header extends Component {
       <Row>
         <Navbar className="navbar" expand="md" dark fixed="top">
           <Col md="3" className="logo-section">
-            <NavbarBrand className="full" href="/">
+            <NavbarBrand className="full" href="/my-blog">
               <img className="logo" src={Logo} alt="logo"></img>
             </NavbarBrand>
           </Col>
@@ -59,7 +59,7 @@ class Header extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem className="navItem">
-                  <NavLink className="navLink" href="/">
+                  <NavLink className="navLink" href="/my-blog">
                     Trang chủ
                   </NavLink>
                 </NavItem>
