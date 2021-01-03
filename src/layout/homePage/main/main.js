@@ -90,7 +90,7 @@ export default class Main extends Component {
                   </p>
                   <div className="button-section">
                     <Link to="#">Read More</Link>
-                    <Link to={{pathname: '/my-blog/contact'}}>Contact Us</Link>
+                    <Link to={{pathname: '/contact'}}>Contact Us</Link>
                   </div>
                 </div>
               </Col>

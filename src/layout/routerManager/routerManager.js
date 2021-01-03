@@ -31,11 +31,11 @@ const AdminOnly = (ComponsedComponent, auth) => {
                             })
                         } else {
                             alert("You're not an administrator! Pleas login with user administrator!");
-                            this.props.history.push('/my-blog/login');
+                            this.props.history.push('/login');
                         }
                     })
             } else {
-                this.props.history.push('/my-blog/login')
+                this.props.history.push('/login')
             }
         }
         render() {
@@ -62,13 +62,13 @@ class RouterManager extends Component {
     render() {
         return (
             <div>                
-                <Route path="/my-blog" exact component={Main} />
-                <Route path="/my-blog/contact"  component={Contact} />
-                <Route path="/my-blog/about"  component={About} />
-                <Route path="/my-blog/login"  component={LoginPage} />
-                <Route path="/my-blog/article/:id"  component={ViewArticle} />
-                <Route path="/my-blog/new-article"  component={AdminOnly(NewArticle, this.props.auth)} />
-                <Route path="/my-blog/editArticle/:id"  component={AdminOnly(EditArticle, this.props.auth)} />
+                <Route path="/" exact component={Main} />
+                <Route path="/contact"  component={Contact} />
+                <Route path="/about"  component={About} />
+                <Route path="/login"  component={LoginPage} />
+                <Route path="/article/:id"  component={ViewArticle} />
+                <Route path="/new-article"  component={AdminOnly(NewArticle, this.props.auth)} />
+                <Route path="/editArticle/:id"  component={AdminOnly(EditArticle, this.props.auth)} />
             </div>
         );
     }

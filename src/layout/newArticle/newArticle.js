@@ -121,7 +121,7 @@ export default class NewArticle extends Component {
       .add(article)
       .then((res) => {
         alert("Post successfully added!");
-        this.props.history.push("/my-blog");
+        this.props.history.push("/");
         console.log(res);
       })
       .catch((err) => console.log(err));
