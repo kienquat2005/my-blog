@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  BrowserRouter as  Switch, Route, withRouter } from "react-router-dom";
+import { BrowserRouter as Switch, Route, withRouter } from "react-router-dom";
 import ViewArticle from "../viewArticle/viewArticle";
 import EditArticle from "../editArticle/editArticle";
 import NewArticle from "../newArticle/newArticle";
@@ -31,11 +31,11 @@ const AdminOnly = (ComponsedComponent, auth) => {
                             })
                         } else {
                             alert("You're not an administrator! Pleas login with user administrator!");
-                            this.props.history.push('/login');
+                            this.props.history.push('/my-blog/login');
                         }
                     })
             } else {
-                this.props.history.push('/login')
+                this.props.history.push('/my-blog/login')
             }
         }
         render() {
@@ -61,15 +61,15 @@ class RouterManager extends Component {
     }
     render() {
         return (
-            <Switch>
+            <div>                
                 <Route path="/my-blog" exact component={Main} />
-                <Route path="/contact" exact component={Contact} />
-                <Route path="/about" exact component={About} />
-                <Route path="/login" exact component={LoginPage} />
-                <Route path="/article/:id" exact component={ViewArticle} />
-                <Route path="/new-article" exact component={AdminOnly(NewArticle, this.props.auth)} />
-                <Route path="/editArticle/:id" exact component={AdminOnly(EditArticle, this.props.auth)} />
-            </Switch>
+                <Route path="/my-blog/contact"  component={Contact} />
+                <Route path="/my-blog/about"  component={About} />
+                <Route path="/my-blog/login"  component={LoginPage} />
+                <Route path="/my-blog/article/:id"  component={ViewArticle} />
+                <Route path="/my-blog/new-article"  component={AdminOnly(NewArticle, this.props.auth)} />
+                <Route path="/my-blog/editArticle/:id"  component={AdminOnly(EditArticle, this.props.auth)} />
+            </div>
         );
     }
 }

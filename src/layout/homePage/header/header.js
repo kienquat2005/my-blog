@@ -19,6 +19,7 @@ import {
 } from "reactstrap";
 import { Form, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
+import {Link} from 'react-router-dom'
 import firebase from "../../../Config/firebase";
 
 class Header extends Component {
@@ -49,7 +50,7 @@ class Header extends Component {
       <Row>
         <Navbar className="navbar" expand="md" dark fixed="top">
           <Col md="3" className="logo-section">
-            <NavbarBrand className="full" href="/my-blog">
+            <NavbarBrand className="full" to="/">
               <img className="logo" src={Logo} alt="logo"></img>
             </NavbarBrand>
           </Col>
@@ -59,19 +60,19 @@ class Header extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem className="navItem">
-                  <NavLink className="navLink" href="/my-blog">
+                  <Link className="navLink" to="/">
                     Trang chủ
-                  </NavLink>
+                  </Link>
                 </NavItem>
                 <NavItem className="navItem">
-                  <NavLink className="navLink" href="/about">
+                  <Link className="navLink" to="/about">
                     Blog
-                  </NavLink>
+                  </Link>
                 </NavItem>
                 <NavItem className="navItem">
-                  <NavLink className="navLink" href="/contact">
+                  <Link className="navLink" to="/contact">
                     Liên hệ 
-                  </NavLink>
+                  </Link>
                 </NavItem>
                 <Form inline className="form">
                   <FormControl
@@ -93,25 +94,25 @@ class Header extends Component {
                 <DropdownMenu right>
                   {this.props.auth.isEmpty ? (
                     <DropdownItem>
-                      <NavLink className="new_post" href="/login">
+                      <Link className="new_post" to="/login">
                         Đăng nhập
-                      </NavLink>
+                      </Link>
                     </DropdownItem>
                   ) : (
                     <DropdownItem>
-                      <NavLink
+                      <Link
                         onClick={() => firebase.auth().signOut()}
                         className="new_post"
                       >
                         Đăng xuất
-                      </NavLink>
+                      </Link>
                     </DropdownItem>
                   )}
                   {this.props.auth.uid === "1osNDqHyjsTecTHnsXiBsLmsPHp2" || this.props.auth.uid === "T9Mbzum7Y6a9AdL4Wo32tIFIOF92" ? (
                     <DropdownItem>
-                      <NavLink className="new_post" href="/new-article">
+                      <Link className="new_post" to="/new-article">
                         Thêm bài viết
-                      </NavLink>
+                      </Link>
                     </DropdownItem>
                   ) : (
                     ""

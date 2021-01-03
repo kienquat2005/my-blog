@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Header from './layout/homePage/header/header';
 import Footer from './layout/homePage/footer/footer';
@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <Provider store={getReduxStore()}>
         <ReactReduxFirebaseProvider {...getRrfProp()}>
-          <BrowserRouter basename={process.env.PUBLIC_URL + '/'}>
+          <HashRouter>
             <Header />
             <RouterManager />
             <Footer />
-          </BrowserRouter>
+          </HashRouter>
         </ReactReduxFirebaseProvider>
       </Provider>
     </div>

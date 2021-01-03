@@ -111,7 +111,7 @@ export default class EditArticle extends Component {
             }
           );
         } else {
-          this.props.history.push({ pathname: "/my-blog" });
+          this.props.history.push({ pathname: "/" });
         }
       });
   };
@@ -169,7 +169,7 @@ export default class EditArticle extends Component {
       .update(article)
       .then((res) => {
         alert("Update successfully !");
-        this.props.history.push("/my-blog");
+        this.props.history.push("/");
         console.log(res);
       })
       .catch((err) => console.log(err));
@@ -317,7 +317,7 @@ export default class EditArticle extends Component {
                             </Button>
                             <Button
                               color="secondary"
-                              onClick={(e) => this.props.history.push({ pathname: "/my-blog" })}
+                              onClick={(e) => this.props.history.push({ pathname: "/" })}
                             >
                               Cancel
                             </Button>
